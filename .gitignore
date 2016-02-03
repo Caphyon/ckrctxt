@@ -27,6 +27,22 @@
 *.out
 *.app
 
+# Visual Studio
+*.aps
+*.bat
+*.db
+*.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+.vs/**
+!bin/*
+build.*
+Debug
+Release
+ipch
+
 # =========================
 # Operating System Files
 # =========================
