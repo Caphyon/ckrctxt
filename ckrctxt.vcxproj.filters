@@ -77,4 +77,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="src\compatibility.manifest">
+      <Filter>win</Filter>
+    </Manifest>
+    <Manifest Include="src\dpi_aware.manifest">
+      <Filter>win</Filter>
+    </Manifest>
+  </ItemGroup>
 </Project>
