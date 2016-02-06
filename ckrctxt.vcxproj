@@ -37,6 +37,10 @@
     <ClCompile Include="src\TextMeasurer.cpp" />
     <ClCompile Include="src\TextReporter.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="src\compatibility.manifest" />
+    <Manifest Include="src\dpi_aware.manifest" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BB0D725B-F417-4C61-8942-5B40F0125F27}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -92,7 +96,7 @@
       </AdditionalManifestDependencies>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>$(ProjectDir)\..\..\advinst\win\compatibility.manifest; %(AdditionalManifestFiles)</AdditionalManifestFiles>
+      <AdditionalManifestFiles>src/compatibility.manifest;src/dpi_aware.manifest</AdditionalManifestFiles>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,7 +126,7 @@
       </AdditionalManifestDependencies>
     </Link>
     <Manifest>
-      <AdditionalManifestFiles>$(ProjectDir)\..\..\advinst\win\compatibility.manifest; %(AdditionalManifestFiles)</AdditionalManifestFiles>
+      <AdditionalManifestFiles>src/compatibility.manifest;src/dpi_aware.manifest</AdditionalManifestFiles>
     </Manifest>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
