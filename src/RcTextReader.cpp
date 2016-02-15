@@ -160,7 +160,7 @@ RcTextReader & RcTextReader::operator>>(TextEntity & aTextEnt)
   {
   case TextEntity::CONTROLBUTTON:
     // must have at least 9 values (+1)
-    ATLASSERT (mr.size() >= 10);
+    assert(mr.size() >= 10);
 
     // multiline control button
     if ( (L"Button" == mr[4]) &&
@@ -192,7 +192,7 @@ RcTextReader & RcTextReader::operator>>(TextEntity & aTextEnt)
 
   case TextEntity::TEXT:
     // must have at least 7 values (+1)
-    ATLASSERT (mr.size() >= 8);
+    assert(mr.size() >= 8);
 
     aTextEnt.mRc.left   = stoi( mr[4] );          // X
     aTextEnt.mRc.top    = stoi( mr[5] );          // Y
@@ -201,7 +201,7 @@ RcTextReader & RcTextReader::operator>>(TextEntity & aTextEnt)
     break;
 
   default:
-    ATLASSERT (!"unsupported type code!");
+    assert(!"unsupported type code!");
   } // end switch
 
   aTextEnt.mDlgName = mDlgName;
