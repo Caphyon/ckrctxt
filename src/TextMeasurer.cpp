@@ -35,7 +35,7 @@ void TextMeasurer::ComputeSize(TextEntity & aTextEnt)
   mTextEnt = &aTextEnt;
 
   // we assume text block was already read from file prior to this call
-  ATLASSERT (mTextEnt->mText.size() > 0);
+  assert(mTextEnt->mText.size() > 0);
 
   LONG & rcWidthDU = mTextEnt->mRc.right;
   LONG & rcHeightDU = mTextEnt->mRc.bottom;
@@ -123,7 +123,7 @@ void TextMeasurer::ComputeSize(TextEntity & aTextEnt)
       if ( !foundnl &&
            (mTextEnt->mText.size() != nextpos) )  // not end of text
       {
-        ATLASSERT ( iswspace(wline[wline.size()-1]) );
+        assert( iswspace(wline[wline.size()-1]) );
 
         // remove trailing white space from current line
         wline.pop_back();
@@ -170,7 +170,7 @@ void TextMeasurer::ComputeSize(TextEntity & aTextEnt)
   if (mTxtWidth < sz.cx)                // adjust maximum (line of) text width
     mTxtWidth = sz.cx;
   mTxtHeight += sz.cy;                  // adjust text height (px)
-  ATLASSERT (mTxtWidth <= mRcWidth);
+  assert(mTxtWidth <= mRcWidth);
 }
 
 bool TextMeasurer::IsResizeNeeded() const
@@ -180,7 +180,7 @@ bool TextMeasurer::IsResizeNeeded() const
 
 TextSize TextMeasurer::GetRealSize() const
 {
-  ATLASSERT (nullptr != mTextEnt);
+  assert(nullptr != mTextEnt);
 
   TextSize szText = *mTextEnt;
   szText.mRcWidthPX   = mRcWidth;
@@ -199,7 +199,7 @@ TextSize TextMeasurer::GetRealSize() const
     ++szText.mTxtWidthDU;
 #if _DEBUG
   sz = mDlg.DUtoPX(szText.mTxtWidthDU, szText.mTxtHeightDU);
-  ATLASSERT (szText.mTxtWidthPX <= sz.cx);
+  assert(szText.mTxtWidthPX <= sz.cx);
 #endif
 
   // adjust computed text area to rectangle area

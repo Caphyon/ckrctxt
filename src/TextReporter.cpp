@@ -35,7 +35,7 @@ TextReporter::TextReporter(std::wostream & aOStream, UINT aCodepage)
 TextReporter & TextReporter::operator<<(const TextSize & aSzText)
 {
   // we assume TextSize structure was already initialized
-  ATLASSERT (aSzText.mText.size() > 0);
+  assert(aSzText.mText.size() > 0);
 
   // write new header on dialog change
   if (mOldDlgName != aSzText.mDlgName)

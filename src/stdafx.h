@@ -9,6 +9,7 @@
 
 #include "targetver.h"
 
+#include <assert.h>
 #include <atlbase.h>
 
 // Windows Template Library (WTL) - extends ATL
